@@ -1,25 +1,35 @@
 import logo from './logo.svg';
+import RecordList from './components/RecordList';
+import NewRecordForm from './components/NewRecordForm';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const records = [
+        {
+            game: 'overwatch',
+            won: true,
+            date: new Date().toString(),
+            id: 1
+        },
+        {
+            game: 'Bloons td',
+            won: true,
+            date: new Date().toString(),
+            id: 2
+        },
+        {
+            game: 'BG',
+            won: false,
+            date: new Date().toString(),
+            id: 3
+        }
+    ]
+    return (
+        <div className="App">
+            <RecordList records={records} />
+            <NewRecordForm />
+        </div>
+    );
 }
 
 export default App;
