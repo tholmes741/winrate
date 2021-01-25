@@ -1,5 +1,6 @@
 import RecordList from './records/RecordList';
 import NewRecordForm from './records/NewRecordForm';
+import { AppBody } from './components';
 import './App.css';
 
 function App() {
@@ -24,10 +25,10 @@ function App() {
     //     }
     // ]
     return (
-        <div className="App">
+        <AppBody>
             <RecordList />
             <NewRecordForm />
-        </div>
+        </AppBody>
     );
 }
 

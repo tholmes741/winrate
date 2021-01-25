@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { create_record } from './actions';
+import { SectionCard } from '../components';
 
 const NewRecordForm = ({ onAddRecordPressed }) => {
     const [gameValue, setGameValue] = useState('');
     const [wonValue, setWonValue] = useState(true);
 
     return (
-        <div>
+        <SectionCard>
             <input 
                 type="text"
                 placeholder="What game did you play?"
@@ -36,7 +37,7 @@ const NewRecordForm = ({ onAddRecordPressed }) => {
                     id: Math.floor(Math.random() * 100)
                 })}>
                 Add Record</button>
-        </div>
+        </SectionCard>
     );
 }
 
