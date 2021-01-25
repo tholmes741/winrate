@@ -11,7 +11,8 @@ export const AppBody = styled.div`
 
 export const SectionCard = styled.div`
     background: white;
-    margin: 10px;
+    margin: 15px 10px 0px;
     padding: 10px;
     box-shadow: 3px 3px 10px #313131;
+    border-radius: 3px;
 `;

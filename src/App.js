@@ -26,8 +26,8 @@ function App() {
     // ]
     return (
         <AppBody>
-            <RecordList />
             <NewRecordForm />
+            <RecordList />
         </AppBody>
     );
 }
