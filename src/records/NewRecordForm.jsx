@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { create_record } from './actions';
 
-const NewRecordForm = () => {
+const NewRecordForm = ({ onAddRecordPressed }) => {
     const [gameValue, setGameValue] = useState('');
     const [wonValue, setWonValue] = useState(true);
 
@@ -26,9 +28,20 @@ const NewRecordForm = () => {
                 checked={!wonValue}
                 onChange={() => setWonValue(false)}/>
             <label htmlFor="loss">Loss</label>
-            <button onClick={() => console.log(gameValue, wonValue)}>Add Record</button>
+            <button 
+                onClick={() => onAddRecordPressed({
+                    game: gameValue,
+                    won: wonValue,
+                    date: new Date().toDateString(),
+                    id: Math.floor(Math.random() * 100)
+                })}>
+                Add Record</button>
         </div>
     );
 }
 
-export default NewRecordForm;
+const mapDispatchToProps = (dispatch) => ({
+    onAddRecordPressed: record => dispatch(create_record(record))
+});
+
+export default connect(null, mapDispatchToProps)(NewRecordForm);

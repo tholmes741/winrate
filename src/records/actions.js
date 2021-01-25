@@ -3,4 +3,3 @@ export const create_record = record => ({
     type: CREATE_RECORD,
     payload: { record }
 });
-

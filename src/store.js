@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import { records } from './reducers';
+import { records } from './records/reducers';
 
 const reducers = {
     records
